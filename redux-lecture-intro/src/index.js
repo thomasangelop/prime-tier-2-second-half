@@ -37,11 +37,20 @@ const buttonTwoReducer = (state={clickCountB: 0 }, action) => {
     return state;
 }
 
+const personReducer = (state = [], action) => {
+    if (action.type === 'ADD_PERSON') {
+        console.log('Adding a person!!!', action);
+        //spread out all the stuff that used to be in the array and add 
+        state = [...state, action.payload ];
+    }
+    return state;
+}
+
 // this creates the Redux store
 // It's a big object that holds all our applicaiton's state
 const storeInstance = createStore(
     combineReducers({
-        buttonOneReducer, buttonTwoReducer,
+        buttonOneReducer, buttonTwoReducer, personReducer,
     }),
     applyMiddleware(logger),
 )
