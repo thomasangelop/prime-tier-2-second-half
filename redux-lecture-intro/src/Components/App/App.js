@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
+import Button from '../Button/Button';
 import { connect } from 'react-redux';
+
+const mapReduxStateToProps = (reduxState) => ({ 
+  reduxState 
+});
 
 class App extends Component {
   handleClick = () => {
@@ -20,8 +25,7 @@ class App extends Component {
           <h1>Redux Intro</h1>
           <button onClick={this.handleClick}>BUTTON 1</button>
           <button onClick={this.handleClick2}>BUTTON 2</button>
-          <p>Button 1 was clicked {this.props.reduxState.buttonOneReducer.clickCount} times.</p>
-          <p>Button 2 was clicked {this.props.reduxState.buttonTwoReducer.clickCountB} times.</p>
+          <Button />
           {/* // <pre>
           //   Junky State:
           //   {JSON.stringify( this.props.reduxState )}
@@ -30,9 +34,5 @@ class App extends Component {
     );
   }
 }
-
-const mapReduxStateToProps = (reduxState) => ({ 
-  reduxState 
-});
 
 export default connect(mapReduxStateToProps)(App);
