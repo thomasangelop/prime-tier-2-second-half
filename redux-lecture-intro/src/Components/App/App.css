@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  background-color: slateblue;
+}
+
+nav li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 1em;
+}
+
+html {
+  background-color: lightslategray;
+}
