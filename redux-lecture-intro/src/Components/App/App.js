@@ -20,10 +20,12 @@ class App extends Component {
           <h1>Redux Intro</h1>
           <button onClick={this.handleClick}>BUTTON 1</button>
           <button onClick={this.handleClick2}>BUTTON 2</button>
-          <pre>
-            Junky State:
-            {JSON.stringify( this.props.reduxState )}
-          </pre>
+          <p>Button 1 was clicked {this.props.reduxState.buttonOneReducer.clickCount} times.</p>
+          <p>Button 2 was clicked {this.props.reduxState.buttonTwoReducer.clickCountB} times.</p>
+          {/* // <pre>
+          //   Junky State:
+          //   {JSON.stringify( this.props.reduxState )}
+          // </pre> */}
         </div>
     );
   }
