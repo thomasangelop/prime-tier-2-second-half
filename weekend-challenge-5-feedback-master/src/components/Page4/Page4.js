@@ -7,6 +7,10 @@ class Page4 extends Component {
     return (
       <div>
         <Header />
+        <div className="PageNumberOutOfTotalPages">
+            <h3>4 of 4 pages</h3>
+            <h3>[============]</h3>
+        </div>
       </div>
     );
   }
