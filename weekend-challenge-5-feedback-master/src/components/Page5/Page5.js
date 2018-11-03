@@ -7,6 +7,10 @@ class Page5 extends Component {
     return (
       <div>
         <Header />
+        <div className="Card">
+          <h4>Thank you!</h4>
+          <button>Leave New Feedback</button>
+        </div>
       </div>
     );
   }
