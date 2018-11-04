@@ -10,6 +10,8 @@ const feedbackInputObject = {
   comments: '',
 }
 
+const mapReduxStateToProps = ( reduxState ) => ({ reduxState });
+
 class Page1 extends Component {
   state = feedbackInputObject;
 
@@ -55,4 +57,4 @@ class Page1 extends Component {
   }
 }
 
-export default connect()(Page1);
+export default connect(mapReduxStateToProps)(Page1);

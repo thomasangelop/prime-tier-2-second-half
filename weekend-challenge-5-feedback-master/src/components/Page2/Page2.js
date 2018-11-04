@@ -2,7 +2,35 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { connect } from 'react-redux';
 
+const feedbackInputObject = {
+  feeling: '',
+  comprehension: '',
+  support: '',
+  comments: '',
+}
+
+const mapReduxStateToProps = ( reduxState ) => ({ reduxState });
+
 class Page2 extends Component {
+
+  state = feedbackInputObject;
+
+  handleChange = (event) => {
+    console.log('handling change of comprehension input');
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  handleSubmit = (event) => {
+    console.log('handling submit of comprehension input');
+    event.preventDefault();
+    this.props.dispatch( { type: 'ENTERED_COMPREHENSION_INFO ', 
+      payload: this.state} );
+    //when form is submitted, this will send us to the next page
+    window.location.hash = "3";
+  }
+
   render() {
     return (
       <div>
@@ -15,10 +43,11 @@ class Page2 extends Component {
             <h4>How well are you understanding the content?</h4>
             <p>Please answer on a scale of 1-5.</p>
             <p>1 being the lowest and 5 being the best.</p>
-            <form>
-                <input type="number" name="Scale 1-5: 
-                    How well are you understanding the content?" 
-                    min="1" max="5" required />
+            <form onSubmit={this.handleSubmit}>
+                <input type="number" name="comprehension" 
+                    min="1" max="5" 
+                    onChange={this.handleChange} 
+                    value={this.state.comprehension} required />
                 <input type="submit" value="Next ->" />
             </form>
         </div>
@@ -27,4 +56,4 @@ class Page2 extends Component {
   }
 }
 
-export default connect()(Page2);
+export default connect(mapReduxStateToProps)(Page2);
