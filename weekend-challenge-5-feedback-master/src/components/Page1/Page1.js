@@ -5,7 +5,7 @@ import Page2 from '../Page2/Page2';
 
 const feedbackInputObject = {
   feeling: '',
-  comprehension: '',
+  understanding: '',
   support: '',
   comments: '',
 }

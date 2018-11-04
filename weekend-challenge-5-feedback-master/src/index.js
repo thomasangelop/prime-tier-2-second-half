@@ -7,7 +7,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-const feedbackReducer = (state={ feeling: '', comprehension: '', support: '',
+const feedbackReducer = (state={ feeling: '', understanding: '', support: '',
                      comments: '' }, action) => {
     console.log('in feedback reducer');
     switch (action.type) {
@@ -18,11 +18,11 @@ const feedbackReducer = (state={ feeling: '', comprehension: '', support: '',
             state = {...state, feeling: action.payload.feeling };
             console.log('State is now', state);
             return state; 
-        case 'ENTERED_COMPREHENSION_INFO':
-            console.log('in ENTERED_COMPREHENSION_INFO', action.payload.comprehension);
-            let stateComprehension = state.comprehension;
-            console.log('state feeling:',stateComprehension);
-            state = {...state, comprehension: action.payload.comprehension };
+        case 'ENTERED_UNDERSTANDING_INFO':
+            console.log('in ENTERED_UNDERSTANDING_INFO', action.payload.understanding);
+            let stateUnderstanding = state.understanding;
+            console.log('state feeling:',stateUnderstanding);
+            state = {...state, understanding: action.payload.understanding };
             console.log('State is now', state);
             return state;    
         case 'ENTERED_SUPPORT_INFO':

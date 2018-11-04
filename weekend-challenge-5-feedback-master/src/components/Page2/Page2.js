@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const feedbackInputObject = {
   feeling: '',
-  comprehension: '',
+  understanding: '',
   support: '',
   comments: '',
 }
@@ -16,16 +16,16 @@ class Page2 extends Component {
   state = feedbackInputObject;
 
   handleChange = (event) => {
-    console.log('handling change of comprehension input');
+    console.log('handling change of understanding input');
     this.setState({
       [event.target.name]: event.target.value,
     });
   }
 
   handleSubmit = (event) => {
-    console.log('handling submit of comprehension input');
+    console.log('handling submit of understanding input');
     event.preventDefault();
-    this.props.dispatch( { type: 'ENTERED_COMPREHENSION_INFO', 
+    this.props.dispatch( { type: 'ENTERED_UNDERSTANDING_INFO', 
       payload: this.state} );
     //when form is submitted, this will send us to the next page
     window.location.hash = "3";
@@ -44,7 +44,7 @@ class Page2 extends Component {
             <p>Please answer on a scale of 1-5.</p>
             <p>1 being the lowest and 5 being the best.</p>
             <form onSubmit={this.handleSubmit}>
-                <input type="number" name="comprehension" 
+                <input type="number" name="understanding" 
                     min="1" max="5" 
                     onChange={this.handleChange} 
                     value={this.state.comprehension} required />

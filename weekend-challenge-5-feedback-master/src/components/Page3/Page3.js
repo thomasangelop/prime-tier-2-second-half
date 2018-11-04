@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const feedbackInputObject = {
   feeling: '',
-  comprehension: '',
+  understanding: '',
   support: '',
   comments: '',
 }

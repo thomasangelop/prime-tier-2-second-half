@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { connect } from 'react-redux';
 
+const feedbackInputObject = {
+  feeling: '',
+  understanding: '',
+  support: '',
+  comments: '',
+}
+
 class Page5 extends Component {
 
   handleClick = (event) => {

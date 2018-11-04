@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const feedbackInputObject = {
   feeling: '',
-  comprehension: '',
+  understanding: '',
   support: '',
   comments: '',
 }
@@ -33,6 +33,7 @@ class Page4 extends Component {
     this.addFeedbackToAdminDatabase();
   }
 
+
   addFeedbackToAdminDatabase = () => {
     axios({
       method: 'POST',
@@ -40,6 +41,8 @@ class Page4 extends Component {
       data: this.state
     })
     .then( ( response ) => {
+      console.log('POST was made');
+      
       alert('Feedback successfully submitted', response)
     })
     .catch( (error) => {
