@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 const feedbackInputObject = {
   feeling: '',
@@ -29,7 +30,23 @@ class Page4 extends Component {
       payload: this.state} );
     //when form is submitted, this will send us to the next page
     window.location.hash = "5";
+    this.addFeedbackToAdminDatabase();
   }
+
+  addFeedbackToAdminDatabase = () => {
+    axios({
+      method: 'POST',
+      url: '/feedback',
+      data: this.state
+    })
+    .then( ( response ) => {
+      alert('Feedback successfully submitted', response)
+    })
+    .catch( (error) => {
+      alert('Bad things happened! Oh no!', error);
+    })
+  }
+
   render() {
     return (
       <div>
