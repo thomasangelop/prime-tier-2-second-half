@@ -2,7 +2,34 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { connect } from 'react-redux';
 
+const feedbackInputObject = {
+  feeling: '',
+  comprehension: '',
+  support: '',
+  comments: '',
+}
+
+const mapReduxStateToProps = ( reduxState ) => ({ reduxState });
+
+
 class Page4 extends Component {
+  state = feedbackInputObject;
+
+  handleChange = (event) => {
+    console.log('handling change of comments input');
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  handleSubmit = (event) => {
+    console.log('handling submit of comments input');
+    event.preventDefault();
+    this.props.dispatch( { type: 'ENTERED_COMMENTS_INFO ', 
+      payload: this.state} );
+    //when form is submitted, this will send us to the next page
+    window.location.hash = "5";
+  }
   render() {
     return (
       <div>
@@ -14,9 +41,11 @@ class Page4 extends Component {
         <div className="Card QuestionCard">
             <h4>Do you have any comments you want to leave?</h4>
             <p>Please answer in your own words.</p>
-            <form>
-                <input type="text" name="Do you have any comments you want
-                  to leave?" required />
+            <form onSubmit={this.handleSubmit} >
+                <input type="text" name="comments" 
+                onChange={this.handleChange}
+                value={this.state.comments}  
+                placeholder="The lecture today was awesome!" required />
                 <input type="submit" value="Submit v/ v/" />
             </form>
         </div>
