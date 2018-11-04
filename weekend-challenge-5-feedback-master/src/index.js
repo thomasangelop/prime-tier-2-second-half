@@ -32,6 +32,13 @@ const feedbackReducer = (state={ feeling: '', comprehension: '', support: '',
             state = {...state, support: action.payload.support };
             console.log('State is now', state);
             return state;
+        case 'ENTERED_COMMENTS_INFO':
+            console.log('in ENTERED_COMMENTS_INFO', action.payload.comments);
+            let stateComments = state.comments;
+            console.log('state feeling:',stateComments);
+            state = {...state, comments: action.payload.comments };
+            console.log('State is now', state);
+            return state;
         // 
         // case 'ENTER_CUSTOMER_INFO':
         //     console.log('in ENTER_CUSTOMER_INFO');

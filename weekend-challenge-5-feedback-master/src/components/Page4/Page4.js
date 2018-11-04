@@ -25,7 +25,7 @@ class Page4 extends Component {
   handleSubmit = (event) => {
     console.log('handling submit of comments input');
     event.preventDefault();
-    this.props.dispatch( { type: 'ENTERED_COMMENTS_INFO ', 
+    this.props.dispatch( { type: 'ENTERED_COMMENTS_INFO', 
       payload: this.state} );
     //when form is submitted, this will send us to the next page
     window.location.hash = "5";
