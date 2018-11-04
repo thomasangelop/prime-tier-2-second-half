@@ -25,13 +25,14 @@ const feedbackReducer = (state={ feeling: '', comprehension: '', support: '',
             state = {...state, comprehension: action.payload.comprehension };
             console.log('State is now', state);
             return state;    
-        // case 'REMOVE_PIZZA':
-        //     console.log('in REMOVE_PIZZA');
-        //     let pizzaId = action.payload.id;
-        //     console.log('pizza to be removed', action.payload);
-        //     state = {...state, pizza: state.pizza.filter(pizza => pizza.id !== pizzaId)};
-        //     console.log('State is now', state);
-        //     return state; 
+        case 'ENTERED_SUPPORT_INFO':
+            console.log('in ENTERED_SUPPORT_INFO', action.payload.support);
+            let stateSupport = state.support;
+            console.log('state feeling:',stateSupport);
+            state = {...state, support: action.payload.support };
+            console.log('State is now', state);
+            return state;
+        // 
         // case 'ENTER_CUSTOMER_INFO':
         //     console.log('in ENTER_CUSTOMER_INFO');
         //     state = {
