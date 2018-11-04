@@ -25,7 +25,7 @@ class Page2 extends Component {
   handleSubmit = (event) => {
     console.log('handling submit of comprehension input');
     event.preventDefault();
-    this.props.dispatch( { type: 'ENTERED_COMPREHENSION_INFO ', 
+    this.props.dispatch( { type: 'ENTERED_COMPREHENSION_INFO', 
       payload: this.state} );
     //when form is submitted, this will send us to the next page
     window.location.hash = "3";
