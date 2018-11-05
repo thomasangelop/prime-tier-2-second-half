@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 const feedbackReducer = (state={ feeling: '', understanding: '', support: '',
-                     comments: '' }, action) => {
+                     comments:'',}, action) => {
     console.log('in feedback reducer');
     switch (action.type) {
         case 'ENTERED_FEELING_INFO':
@@ -21,38 +21,24 @@ const feedbackReducer = (state={ feeling: '', understanding: '', support: '',
         case 'ENTERED_UNDERSTANDING_INFO':
             console.log('in ENTERED_UNDERSTANDING_INFO', action.payload.understanding);
             let stateUnderstanding = state.understanding;
-            console.log('state feeling:',stateUnderstanding);
+            console.log('state understanding:',stateUnderstanding);
             state = {...state, understanding: action.payload.understanding };
             console.log('State is now', state);
             return state;    
         case 'ENTERED_SUPPORT_INFO':
             console.log('in ENTERED_SUPPORT_INFO', action.payload.support);
             let stateSupport = state.support;
-            console.log('state feeling:',stateSupport);
+            console.log('state support:',stateSupport);
             state = {...state, support: action.payload.support };
             console.log('State is now', state);
             return state;
         case 'ENTERED_COMMENTS_INFO':
             console.log('in ENTERED_COMMENTS_INFO', action.payload.comments);
             let stateComments = state.comments;
-            console.log('state feeling:',stateComments);
+            console.log('state comments:',stateComments);
             state = {...state, comments: action.payload.comments };
             console.log('State is now', state);
             return state;
-        // 
-        // case 'ENTER_CUSTOMER_INFO':
-        //     console.log('in ENTER_CUSTOMER_INFO');
-        //     state = {
-        //         ...state, 
-        //         customer_name: action.payload.customerName,
-        //         street_address: action.payload.streetAddress,
-        //         city: action.payload.city,
-        //         zip: action.payload.zip,
-        //         type: action.payload.status,
-        //     };
-        //     console.log('State is now', state);
-        //     return state; 
-
         default: 
             return state;
     }
