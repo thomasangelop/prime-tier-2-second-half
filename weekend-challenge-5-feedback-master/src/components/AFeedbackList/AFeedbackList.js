@@ -7,10 +7,10 @@ const mapReduxStateToProps = ( reduxState ) => ({ reduxState });
 class AFeedbackList extends Component {
 
   deleteFeedback = (id) => {
-    // call axios
+    console.log('delete button was pushed');
     axios({
       method: 'DELETE',
-      url: `/feedbacl/${id}`
+      url: `/feedback/${id}`
     })
     .then( (response) => {
       this.props.getFeedback();
