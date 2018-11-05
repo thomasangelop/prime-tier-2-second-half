@@ -3,5 +3,17 @@ th, td {
     padding: 3px;
 
  }
- 
+
 tr:nth-child(even) {background-color: #f2f2f2;}
+
+th {
+    background-color: rgb(213, 198, 149);
+    color: white;
+}
+
+section {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    display: relative;
+}
