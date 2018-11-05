@@ -1,0 +1,40 @@
+.QuestionCard {
+    border: 5px solid white;
+    margin: 10%;
+} 
+
+.PageNumberOutOfTotalPages {
+    border: 5px solid white;
+    margin: 5%;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: rgb(97, 201, 100);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+input[type=number] {
+    width: 10%;
+    padding: 16px 32px;
+    margin: 4px 2px;
+}
+
+.meter2 { 
+	height: 20px;  /* Can be anything */
+	position: relative;
+	background: rgb(185, 206, 78);
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	padding: 10px;
+    box-shadow: inset 0 -1px 1px rgba(156, 85, 85, 0.3);
+    width: 50%;
+    color: white;
+    margin: 3px;
+}
+
