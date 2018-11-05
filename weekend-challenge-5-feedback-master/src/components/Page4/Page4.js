@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import './Page4.css';
 
 const feedbackInputObject = {
   feeling: '',
@@ -59,8 +60,10 @@ class Page4 extends Component {
       <div>
         <Header />
         <div className="PageNumberOutOfTotalPages">
-            <h3>4 of 4 pages</h3>
-            <h3>[============]</h3>
+            {/* <h3>4 of 4 pages</h3> */}
+            <div class="meter4">
+              <span>80%</span>
+            </div>
         </div>
         <div className="Card QuestionCard">
             <h4>Do you have any comments you want to leave?</h4>
@@ -70,7 +73,7 @@ class Page4 extends Component {
                 onChange={this.handleChange}
                 value={this.state.comments}  
                 placeholder="The lecture today was awesome!" required />
-                <input type="submit" value="Submit v/ v/" />
+                <input type="submit" value="Submit" />
             </form>
         </div>
       </div>

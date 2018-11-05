@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import { connect } from 'react-redux';
+import './Page5.css';
 
 const feedbackInputObject = {
   feeling: '',
@@ -28,8 +29,15 @@ class Page5 extends Component {
       <div>
         <Header />
         <div className="Card">
-          <h4>Thank you!</h4>
-          <button onClick={this.handleClick}>Leave New Feedback</button>
+          <div class="PageNumberOutOfTotalPages">
+            <div class="meter5">
+              <span>100%</span>
+            </div>
+          </div>
+            <div className="Card QuestionCard">
+              <h4>Thank you!</h4>
+              <button class="submit" onClick={this.handleClick}>Leave New Feedback</button>
+            </div>
         </div>
       </div>
     );

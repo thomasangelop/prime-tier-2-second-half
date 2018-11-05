@@ -36,9 +36,9 @@ class Page1 extends Component {
       <div>
         <Header />
         <div className="PageNumberOutOfTotalPages">
-            <h3>1 of 4 pages</h3>
+            {/* <h3>1 of 4 pages</h3> */}
             <div class="meter1">
-              <span>25%</span>
+              <span>20%</span>
             </div>
         </div>
         <div className="Card QuestionCard">
