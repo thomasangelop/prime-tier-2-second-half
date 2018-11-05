@@ -28,6 +28,8 @@ class Page4 extends Component {
     event.preventDefault();
     this.props.dispatch( { type: 'ENTERED_COMMENTS_INFO', 
       payload: this.state} );
+      console.log('what is state', this.props.reduxState);
+      
     //when form is submitted, this will send us to the next page
     window.location.hash = "5";
     this.addFeedbackToAdminDatabase();
@@ -38,15 +40,15 @@ class Page4 extends Component {
     axios({
       method: 'POST',
       url: '/feedback',
-      data: this.state
+      data: this.props.reduxState
     })
     .then( ( response ) => {
       console.log('POST was made');
       
-      alert('Feedback successfully submitted', response)
+      console.log('Feedback successfully submitted', response);
     })
     .catch( (error) => {
-      alert('Bad things happened! Oh no!', error);
+      console.log('Bad things happened! Oh no!', error);
     })
   }
 
@@ -74,4 +76,4 @@ class Page4 extends Component {
   }
 }
 
-export default connect()(Page4);
+export default connect(mapReduxStateToProps)(Page4);

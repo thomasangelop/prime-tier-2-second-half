@@ -18,7 +18,7 @@ class Page3 extends Component {
   handleChange = (event) => {
     console.log('handling change of support input');
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: parseInt(event.target.value),
     });
   }
 

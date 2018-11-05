@@ -19,14 +19,14 @@ const pool = require('./modules/pool');
 // })
 
 
+
 // Setup a POST route to add a new feedback to the database
 router.post('/', (req, res) => {
     const feedback = req.body;
-    console.log('what is req.body', req.body);
-    
+    console.log('what is req.body', feedback.feedbackReducer);
     const sqlText = `INSERT INTO feedback (feeling, understanding, support, comments) VALUES 
   ($1, $2, $3, $4)`;
-    pool.query(sqlText, [feedback.feeling, feedback.understanding, feedback.support, feedback.comments])
+    pool.query(sqlText, [feedback.feedbackReducer.feeling, feedback.feedbackReducer.understanding, feedback.feedbackReducer.support, feedback.feedbackReducer.comments])
         .then((result) => {
             console.log(`Added to the database`, feedback);
             res.sendStatus(201);

@@ -18,7 +18,7 @@ class Page2 extends Component {
   handleChange = (event) => {
     console.log('handling change of understanding input');
     this.setState({
-      [event.target.name]: event.target.value,
+      [event.target.name]: parseInt(event.target.value),
     });
   }
 
@@ -47,7 +47,8 @@ class Page2 extends Component {
                 <input type="number" name="understanding" 
                     min="1" max="5" 
                     onChange={this.handleChange} 
-                    value={this.state.comprehension} required />
+                    value={this.state.comprehension} 
+                    placeholder="5" required />
                 <input type="submit" value="Next ->" />
             </form>
         </div>
