@@ -28,8 +28,10 @@ class Admin extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to the Admin Portal for Feedback</h1>
-        <h3>Here is the feedback stored:</h3>
+        <section>
+          <h1>Welcome to the Admin Portal for Feedback</h1>
+          <h3>Here is the feedback stored:</h3>
+        </section>
         <div className="Card FeedbackTable">
           <AFeedbackList getFeedback={this.getFeedback} />
         </div>
