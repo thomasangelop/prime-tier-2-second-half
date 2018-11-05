@@ -15,6 +15,12 @@ class Page5 extends Component {
     console.log('sending user back to leave new feedback');
     event.preventDefault();
     window.location.hash = "";
+    this.clearFeedbackInputObject();
+  }
+
+  clearFeedbackInputObject = () => {
+    this.setState(feedbackInputObject);
+    console.log('cleared feedbackInputObject');
   }
 
   render() {
