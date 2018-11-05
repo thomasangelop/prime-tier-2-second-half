@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('./modules/pool');
 
-// Setup a GET route to get all the feedback from the database
+// GET route to get all the feedback from the database
 router.get('/', (req, res) => {
     const sqlText = `SELECT * FROM feedback ORDER BY id;`;
     pool.query(sqlText)
@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 
 
 
-// Setup a POST route to add a new feedback to the database
+// POST route to add a new feedback to the database
 router.post('/', (req, res) => {
     const feedback = req.body;
     console.log('what is req.body', feedback.feedbackReducer);
@@ -35,19 +35,19 @@ router.post('/', (req, res) => {
         })
 })
 
-// Setup DELETE to remove an employee
-// router.delete('/:id', (req, res) => {
-//     let reqId = req.params.id;
-//     console.log('Delete request for id', reqId);
-//     let sqlText = 'DELETE FROM employees WHERE id=$1;';
-//     pool.query(sqlText, [reqId])
-//         .then((result) => {
-//             res.sendStatus(200);
-//         })
-//         .catch((error) => {
-//             console.log(`Error making database query ${sqlText}`, error);
-//             res.sendStatus(500); 
-//         })
-// })
+// DELETE to remove a feedback
+router.delete('/:id', (req, res) => {
+    let reqId = req.params.id;
+    console.log('Delete request for id', reqId);
+    let sqlText = 'DELETE FROM feedback WHERE id=$1;';
+    pool.query(sqlText, [reqId])
+        .then((result) => {
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500); 
+        })
+})
 
 module.exports = router;
