@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import './AFeedbackList.css';
+
 
 const mapReduxStateToProps = ( reduxState ) => ({ reduxState });
 
@@ -30,13 +32,13 @@ class AFeedbackList extends Component {
             </tr>
             {this.props.reduxState.getFeedbackReducer.map(feedback => (
             <tr>
-                    <td key={feedback.id}></td>
+                    <td key={feedback.id}>{`${feedback.id}`}</td>
                     <td>{`${feedback.feeling}`}</td>
                     <td>{`${feedback.understanding}`}</td>
                     <td>{`${feedback.support}`}</td>
                     <td>{`${feedback.comments}`}</td>
                     <td>
-                        <button onClick={() => { 
+                        <button variant="contained" color="green"onClick={() => { 
                         this.deleteFeedback(feedback.id)}}>Delete</button>
                     </td>
             </tr>

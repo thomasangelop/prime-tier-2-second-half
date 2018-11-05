@@ -3,6 +3,7 @@ import '../Header/Header';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import AFeedbackList from '../AFeedbackList/AFeedbackList';
+import './Admin.css';
 
 const mapReduxStateToProps = ( reduxState ) => ({ reduxState });
 
